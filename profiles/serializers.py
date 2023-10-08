@@ -14,5 +14,5 @@ class ProfileSerializer(serializers.ModelSerializer):
         model = Profile
         fields = [
             'id', 'owner', 'created_at', 'updated_at', 'name',
-            'launch_site', 'what3words', 'image', 'comments' 'is_owner'
+            'content', 'image', 'is_owner'
         ]

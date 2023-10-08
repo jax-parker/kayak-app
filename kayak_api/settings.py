@@ -35,7 +35,7 @@ SECRET_KEY = 'django-insecure-p0pv!@4t9pf1htev7ijhuc@z(2m)@y6s%&iq&8r84w2a+7w2x-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-jaxparker-kayakapp-q9kwg37eeea.ws-eu105.gitpod.io']
+ALLOWED_HOSTS = ['8000-jaxparker-kayakapp-gjs9blveo3f.ws-eu105.gitpod.io']
 
 
 # Application definition
@@ -53,7 +53,7 @@ INSTALLED_APPS = [
 
     # Apps
     'profiles',
-    'posts',
+    # 'posts',
 
 ]
 
