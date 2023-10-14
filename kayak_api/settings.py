@@ -53,7 +53,7 @@ INSTALLED_APPS = [
 
     # Apps
     'profiles',
-    # 'posts',
+    'posts',
 
 ]
 
