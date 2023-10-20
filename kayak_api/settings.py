@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 if os.path.exists('env.py'):
     import env
 
@@ -49,11 +50,16 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = 'django-insecure-p0pv!@4t9pf1htev7ijhuc@z(2m)@y6s%&iq&8r84w2a+7w2x-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEBUG' in os.environ
 
-ALLOWED_HOSTS = ['8000-jaxparker-kayakapp-gjs9blveo3f.ws-eu105.gitpod.io']
+ALLOWED_HOSTS = [
+    os.environ.get('ALLOWED_HOST'),
+    'localhost',
+]
 
-
+CORS_ALLOWED_ORIGINS = [
+    os.environ.get('CLIENT_ORIGIN')
+]
 # Application definition
 
 INSTALLED_APPS = [
