@@ -5,11 +5,13 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Post from './Post';
+import Asset from "../../components/Asset";
 
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
 import { useLocation } from "react-router";
 import { axiosReq } from '../../api/axiosDefaults';
+import NoResults from "../../assets/no-results.png";
 
 function PostsPage({ message, filter = ""}) {
   const [posts, setPosts] = useState({ results: [] });
@@ -51,13 +53,16 @@ function PostsPage({ message, filter = ""}) {
                     posts.results.map(post => <Post key={post.id} {...post} setPosts={setPosts}/>)
                   ) 
                   : (
-                    console.log('show no results asset')
-                  )
-              }
+                    <Container className={appStyles.Content}>
+                      <Asset src={NoResults} message={message} />
+
+                    </Container>
+                  )}
             </>
-            ) 
-            : (
-              console.log('show loading spinner')
+            ) : (
+              <Container className={appStyles.Content}>
+                <Asset spinner />
+              </Container>
             )
         }
       </Col>
