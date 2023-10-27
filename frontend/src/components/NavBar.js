@@ -56,6 +56,13 @@ const NavBar = () => {
       </NavLink>
       <NavLink
         className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/contact/create"
+      >
+        <i className="fa-solid fa-file-signature"></i>Contact Us
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
         to={`/profiles/${currentUser?.profile_id}`}
       >
         <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
