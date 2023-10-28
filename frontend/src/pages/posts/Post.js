@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../../styles/Post.module.css";
+import w3wlogo from "../../assets/w3wlogo.png";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
@@ -99,6 +100,9 @@ const Post = (props) => {
         {launchsite_name && <Card.Title className="text-center">{launchsite_name}</Card.Title>}
         {location && <Card.Text>{location}</Card.Text>}
         {what3words && <Card.Text>{what3words}</Card.Text>}
+        <a href="https://what3words.com" target="_blank" rel="noreferrer">
+        <img src={w3wlogo} alt="what 3 words logo" height="50"/> 
+        </a>       
         {comments && <Card.Text>{comments}</Card.Text>}
         <div className={styles.PostBar}>
           {is_owner ? (
