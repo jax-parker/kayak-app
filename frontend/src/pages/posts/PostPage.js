@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
+import styles from "../../styles/PostsPage.module.css";
 import appStyles from "../../App.module.css";
 import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -46,7 +46,7 @@ function PostPage() {
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles for mobile</p>
         <Post {...post.results[0]} setPosts={setPost} postPage />
-        <Container className={appStyles.Content}>
+        <Container className={styles.Container}>
           {currentUser ? (
             <CommentCreateForm
               profile_id={currentUser.profile_id}

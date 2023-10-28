@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import styles from "../../styles/PopularProfiles.module.css";
 import appStyles from "../../App.module.css";
 import Asset from "../../components/Asset";
 import { useProfileData } from "../../contexts/ProfileDataContext";
@@ -10,7 +11,7 @@ const PopularProfiles = ({ mobile }) => {
 
   return (
     <Container
-      className={`${appStyles.Content} ${
+      className={`${styles.Container} ${
         mobile && "d-lg-none text-center mb-3"
       }`}
     >

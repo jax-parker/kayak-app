@@ -18,3 +18,13 @@
   cursor: default;
   color: #232931;
 }
+
+.Container {
+  
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  background-color: #ffffff;
+  border: 1px solid #76d7b8;
+  box-shadow: 0 2px 4px #34b38a;
+  padding-left: 40px;
+  margin-bottom: 16px;
+}
