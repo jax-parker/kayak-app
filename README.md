@@ -7,6 +7,8 @@ The live link can be found here:[]
 
 ![Mockup](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698434886/screenshots_mseqky.jpg)
 
+# Backend API & Frontend Combined.
+
 ## The Strategy Plane
 ### Site Goals
 Kayak Klub is aimed at all kayak enthusiasts. The site aims to connect users with kayaks (or canoes) to allow them to share launch sites and any other valuable information that may be associated with the launch site such as parking, nearby facilites, ease of use etc.
@@ -27,25 +29,38 @@ Click here to take you to my board (opens in a new tab)
 
 **Set Up**
 
-This Epic covers all the initial setup of the React application and dependencies in order to begin coding features.
+This Epic covers all the initial setup of the the Django application and Django REST Framework & React application and dependencies in order to begin coding features.
 
 **Add A Launchsite**
 
-This epic covers the front end creation of the application in regards to launchsite entries. This is to allow users to interact with the backend API via the user interface in order to create, read, update and delete their own launchsite entries.
+This epic covers all API endpoint creation and database connections relating to the CRUD functionality of user posts. This includes like activity. The front end creation of the application in regards to launchsite entries. This is to allow users to interact with the backend API via the user interface in order to create, read, update and delete their own launchsite entries.
 
 **Comments**
 
-This epic covers the front end creation of the application in regards to comments on posts. This is to allow users to interact with the backend API in order add comments on posts.
+This epic covers all API endpoint creation and database connections relating to the CRUD functionality of user comments in relation to posts & the front end creation of the application in regards to comments on posts. This is to allow users to interact with the backend API in order add comments on posts.
 
 **Profiles**
 
-This epic covers the front end creation of the application in regards to user profiles. This is to allow users to interact with the backend API via the user interface to manage their own profiles.
+This epic covers all API endpoint creation and database connections relating to the CRUD functionality of user created profiles. This includes following functionality & the front end creation of the application in regards to user profiles. This is to allow users to interact with the backend API via the user interface to manage their own profiles.
 
 **Contact**
-This epic covers the front end creation of the application in regards to a contact page. This allows users to nteract withthe backend API via the user interface and allow users to contact the site's admin.
+This epic covers the front end creation of the application in regards to a contact page. This allows users to interact withthe backend API via the user interface and allow users to contact the site's admin.
 ## User Stories
 By Epic
-**Add A Launchsite**
+
+**Set UP - Backend**
+* As a developer, I need to create the base project set up so that I can build out the features.
+* As a developer, I need to create a Cloudinary account and create the connection to the project so that static images can be uploaded by users.
+* As a developer, I need to create an ElephantSQL acccount to handle my remote database.
+**Set Up - Frontend**
+* As a user, I would like a favicon on the website so that I can easily know which tab belongs to Kayak Klub
+* As a user, I would like a fully responsive navigation menu so that I can easily access the site from any device
+* As a logged out user I can see sign in and sign up options so that I can sign in / sign up
+
+**Add A Launchsite - Backend**
+* As a user, I want to be able to view edit or delete a launch site
+* As a user, I want to able to create a launch site and list launch sites
+**Add A Launchsite - Frontend**
 * As a logged in user I can create launchsites so that I can share my images and launch site information
 * As a user I can keep scrolling through the images on the site, that are loaded for me automatically so that I don't have to click on "next page"
 * As a launch site owner I can edit my launch site title and description so that I can make corrections or update my post after it was created
@@ -56,14 +71,17 @@ By Epic
 * As a user, I can search for launch sites with keywords, so that I can find the sites and user profiles I am most interested in
 * As a user I can view the details of a single post so that I can learn more about it
 
-**Comments**
+**Comments - Frontend**
 * As a logged in user I can add comments to a launch site so that I can share my thoughts about the site
-* As a user I can see how long ago a comment was made so that I know how old a comment is
+* As a user I can see how many comments a launch site has and long ago a comment was made so that I know how old a comment is
 * As a user I can read comments on launch sites so that I can read what other users think about the sites
 * As an owner of a comment I can delete my comment so that I can control removal of my comment from the application
 * As an owner of a comment I can edit my comment so that I can fix or update my existing comment
 
-**Profiles**
+**Profiles - Backend**
+* As a developer, I want to create a new blank profile with default image when a user is created.
+* As a user, I want to able to get a list of profiles
+**Profiles - Frontend**
 * As a user I can view all the launch sites by a specific user so that I can catch up on their latest sites, or decide I want to follow them
 * As a user I can view other users profiles so that I can see their launch sites and learn more about them
 * As a user I can create a new account so that I can access all the features for signed up users
@@ -74,20 +92,190 @@ By Epic
 * As a logged in user I can follow and unfollow other users so that I can see and remove launch sites by specific users in my feed
 * As a logged in user I can edit my profile so that I can change my profile picture and bio
 
-**Contact**
-* As a user, I would like to be able to contact the site owner (admin) in case I have any issues or queries.
+**Contact - Backend**
+* As a developer, I want to create a contact model and API view so that users can contact the site owner with issues
+**Contact - Frontend**
+* As a user, I would like to be able to contact the site owner (admin) in case I have any issues or queries
 <hr>
 <br>
 
-## The Structure Plane
+## API Endpoints
 
-## Features:
-**Launchsites**
-User Story:
+`As a developer, I need to create the base project set up so that I can build out the features.`
+
+Implementation:<br>
+The base project was created and a virtual environment created with all neccessary packages installed and frozen into the requirements.
+The settings were also edited to hide any secret variables and set dev and production environments apart.
+
+`As a developer, I need to create a Cloudinary account and create the connection to the project so that static images can be uploaded by users.`
+
+Implementation:<br>
+A Cloudinary account was created to allow image uploads via the service account.
+
+`As a developer, I need to create an ElephantSQL acccount to handle my remote database.`
+Implementation:<br>
+An ElephantSQL account was created to handle remote database. Ensured that a version >12 was created to enable it to work.
+
+`As a user I can create a new account so that I can access all the features for signed up users`
+Django rest framework and dj_rest_auth were installed and added to the url patterns and site packages to make use of their built in authentication system.
+
+`As a developer, I want to create api views for launch sites so that they are available to the front end`
 Implementation:
 
-## The Skeleton Plane
 
+## The Structure Plane
+# Features
+
+**Set Up**
+
+` As a user, I would like a favicon on the website so that I can easily know which tab belongs to Kayak Klub`
+
+Implementation:<br>
+A site favicon was implemented with the site's logo. This will allow users to easily identify Kayak Klub when they have multiple tabs open.
+
+![favicon](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698492171/favicon-tab_nl8o0f.png)
+
+`As a logged out user I can see sign in and sign up options so that I can sign in / sign up`
+
+Implementation:<br>
+Checks were implemented to detect when a user is signed in or signed out and nav items displayed accordingly. This will prevent users from being able to click buttons from the UI in order to reach restricted pages.
+
+Redirects on the URLS was also implemented to ensure users cannot access pages when logged out if they are for logged in users only.
+
+
+`As a user, I would like a fully responsive navigation menu so that I can easily access the site from any device`
+
+Implementation:<br>
+A navigation menu was implemented than collapses into a hamburger menu on smaller devices.
+This will ensure that no navigation items overlap and users can access and navigate the site from any size device.
+
+**Navigation**
+
+` As a logged out user I can see sign in and sign up options so that I can sign in / sign up`
+
+`As a user, I would like a fully responsive navigation menu so that I can easily access the site from any device`
+
+Implementation:<br>
+A fully responsive navigation menu has been implemented across the website.
+
+This will allow the users to navigate to different pages on the website with ease from any device. Nav items are different depending on the users logged in state to prevent them accessing areas of the application intended for signed in users.
+
+Logged in users:
+
+When a user is logged in the following navigation items are shown:
+`Add launchsite, Home, Feed,Liked, Sign Out, Contact Us, Profile icon and name`
+
+![Logged In Users](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698493206/navbar-pc_e3cxu6.png)
+
+Logged out users:
+
+* Home, Sign In, Sign Up
+
+![Logged Out Users](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698493305/nabar-loggedout-pc_uoogi2.png)
+
+The site logo is displayed on the left side of the navigation at all times.
+
+The navigation icons change to a white colour when the page is active. This is to indicate to users which page they are currently on.
+
+**Home**
+
+`As a user I can view all the most recent launch sites, ordered by most recently created first so that I am up to date with the newest content`
+
+Implementation:<br>
+The home page displays user launchsite posts in order of newest sites first. This will prevent users from being shown content they have already seen at the top and reduce the need for them to 'search' for new content. These launchsite posts are visible to all users regardless of logged in status. This will allow non registered users to get a feel for the content on the site to know whether they are interested in signing up. 
+
+Restricted access has been implemented on the launchsite posts for users who are not signed in, they will not be able to create a launchsite, like or comment.
+
+**Launch Sites**
+
+`As a logged in user I can create launch sites so that I can share my images and launch site information`
+
+Implementation:<br>
+A 'Add launchsite' button has been implemented in the nav bar in order for logged in users to create a post when they want to share something. This takes you to the launch site posts page where users can upload an image, name the launchsite, add a location, add a what3words and leave a comment. A cancel button will take you back to the home page and the create button will post your launchsite to the top of the home page.
+
+![Add a Launch Site](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698494970/Add-launchsite_e1hebi.png)
+
+`As a user I can keep scrolling through the images on the site, that are loaded for me automatically so that I don't have to click on "next page"`
+
+Implementation:<br>
+Infinite scrolling was implemented to load 10 posts at a time and when user reaches the end of the scroll, it will load 10 more and so on. This will allow for optimal load times to enhance viewing pleasure.
+
+`As a launch site owner I can edit my launch site title and description so that I can make corrections or update my post after it was created`
+
+Implementation:<br>
+Only the user who created the post will be able to edit or delete that post. This will ensure that users have full control of their own posts and unauthorized users cannot tamper with them.
+
+`As a logged in user I can view content filtered by users I follow so that I can keep up to date with what they are posting about`
+
+Implementation:<br>
+Users can also click the Feed navigation item and this will display only posts from users the person has followed.
+
+`As a logged in user I can like a launch site so that I can show my support for the sites that interest me`
+
+Implementation:<br>
+Logged in users have full access to post, comment, like or unlike. This will help ensure that unregistered users do not spam the website while also ensuring genuine users register to the site.
+
+![Likes](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698501474/likes-comments_gqi9au.png)
+
+`As a user, I can search for launch sites with keywords, so that I can find the sites and user profiles I am most interested in`
+
+Implementation:<br>
+A search bar has been added that will allow users to search for keywords so that they can search for content that interests them.
+
+![Search Bar](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698501645/search-bar_xplfgw.png)
+`As a user I can view the details of a single post so that I can learn more about it`
+
+**Comments**
+
+`As a logged in user I can add comments to a launch site so that I can share my thoughts about the site`
+Implementation:<br>
+Below each post, there will be a comment box available to logged in users. This will allow users to add comments under posts.
+
+`As a user I can see how many comments a launch site has and long ago a comment was made so that I know how old a comment is`
+Implementation:<br>
+A comment count will also be shown under the post, to allow users to see how many people have commented on each post.
+A comment or updated time will be displayed in either minutes ago or days ago
+
+`As a user I can read comments on launch sites so that I can read what other users think about the sites`
+Implementation:<br>
+The username and Avatar of the user that created the comment will displayed on each comment
+
+`As an owner of a comment I can delete my comment so that I can control removal of my comment from the application`
+Implementation:<br>
+A delete button has been implemented to allow the user to edit or delete their comment.
+
+`As an owner of a comment I can edit my comment so that I can fix or update my existing comment`
+Implementation:<br>
+An edit button has been implemented to allow the user to edit or delete their comment.
+
+![Comments](![Alt text](image-1.png))
+
+
+**Profiles**
+
+`As a user I can view other users profiles so that I can see their launch sites and learn more about them`
+`As a logged in user I can edit my profile so that I can change my profile picture and bio`
+`As a user I can view user's avatars so that I can easily identify users of the application`
+`As a user I can tell if I am logged in or not so that I can log in if I need to`
+
+![Profile Bio](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698503704/profile-bio_xfjusb.png)
+
+`As a user I can see a list of the most followed profiles so that I can see which profiles are popular`
+Implementation:<br>
+A component showing the most followed users is shown and the user profiles are able to be viewed by clicking on these. On a desktop, the most followed users has 10 users. On a mobile device this is restricted to 4 so that it does not take up too much room as scrolling may become a nuisance. A follow button will also be displayed that will allow the logged in user to follow the target user.
+![Most Followed Profiles](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698503354/most-followed-profiles_pgnadc.png)
+
+`As a user I can view statistics about a specific user: bio, number of posts, follows and users followed so that I can learn more about them`
+`As a logged in user I can follow and unfollow other users so that I can see and remove launch sites by specific users in my feed`
+
+**Contact**
+
+`As a user, I would like to be able to contact the site owner (admin) in case I have any issues or queries`
+Implementation:<br>
+A contact form was added to the navigation that will allow users to submit a contact request if they have any issues or queries.
+
+![Contact Form](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698504056/contact-form_o17pzn.png)
+## The Skeleton Plane
 ### Wireframes
 <details>
 Home, Add Launchsite, Liked & Feed
@@ -130,6 +318,7 @@ I used the colour palette supplied by Looka when I created my logo
 I have chosen a font that is clear to read - Roboto
 ![Roboto](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698425341/Roboto-font_wj7bks.png)
 #### Imagery
+The images on this website are user uploaded except for the logo which was created at [Looka.com](https://looka.com/)
 ## Technologies
 The website has been implemented with the use of a variety of technologies.
 
@@ -147,14 +336,33 @@ The website has been implemented with the use of a variety of technologies.
 - [Cloudinary](https://cloudinary.com) used to host Static files for the site
 - [Heroku](https://www.heroku.com) used for hosting the deployed back-end site.
 
-## Testing
-
-# Bugs
-### **Fixed bugs**
+## Testing & Bugs
+Testing can be found in the [TESTING.md file](https://github.com/jax-parker/kayak-app/blob/main/TESTING.md)
+<hr>
+<br>
 
 ## Deployment
 ## Heroku Deployment
 ## Deployment to Heroku
+The site was deployed to Heroku. The steps to deploy are as follows:
+
+* Navigate to heroku and create an account
+* Click the new button in the top right corner
+* Select create new app
+* Enter app name
+* Select region and click create app
+* Click the resources tab and search for Heroku Postgres
+* Select hobby dev and continue
+
+* Click the deploy tab
+* Scroll down to Connect to GitHub and sign in / authorize when prompted
+* In the search box, find the repositoy you want to deploy and click connect
+* Scroll down to Manual deploy and choose the main branch
+* Click deploy
+<hr>
+<br>
+The live link can be found here:
+
 
 ### 1. Creating the Django Project
 * If development if being done locally: Activate your virtual environment
