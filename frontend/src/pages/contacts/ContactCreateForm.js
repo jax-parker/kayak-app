@@ -23,6 +23,7 @@ const ContactCreateForm = () => {
   const history = useHistory();
 
   const [show, setShow] = useState(false);
+  const [alertVisible, setAlertVisible] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -45,6 +46,7 @@ const ContactCreateForm = () => {
       await axiosReq.post("/contacts/", formData);
       history.goBack();
       handleShow();
+      setAlertVisible(true);
     } catch (err) {
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
@@ -84,6 +86,11 @@ const ContactCreateForm = () => {
           {message}
         </Alert>
       ))}
+       {alertVisible && (
+        <Alert variant="success">
+          Your comment has been submitted successfully!
+        </Alert>
+      )}
 
       <Button className={btnStyles.Button} onClick={() => history.push('/')}>
         Cancel
