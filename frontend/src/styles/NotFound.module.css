@@ -1,0 +1,16 @@
+.NotFound {
+    margin-top: 25vh;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    border: 1px solid #76d7b8;
+    box-shadow: 0 2px 4px #34b38a;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+img {
+    max-width: 100%;
+}
+
