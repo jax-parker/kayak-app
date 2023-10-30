@@ -9,11 +9,14 @@ import { useHistory } from "react-router-dom";
 import btnStyles from "../../styles/Button.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import useRedirect from "../../hooks/useRedirect";
+import AlertMessage from "../../components/AlertMessage";
 
 const ContactCreateForm = () => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
-
+  
+  const [showAlert, setShowAlert] = useState(false);
+  
   const [contactData, setContactData] = useState({
     reason: "",
     content: "",
@@ -23,7 +26,6 @@ const ContactCreateForm = () => {
   const history = useHistory();
 
   const [show, setShow] = useState(false);
-  const [alertVisible, setAlertVisible] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -45,8 +47,10 @@ const ContactCreateForm = () => {
     try {
       await axiosReq.post("/contacts/", formData);
       history.goBack();
+
+      setShowAlert(true);
       handleShow();
-      setAlertVisible(true);
+      
     } catch (err) {
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
@@ -55,7 +59,7 @@ const ContactCreateForm = () => {
   };
 
   const textFields = (
-  <div className={styles.Post}>
+    <div className={styles.Post}>
       <Form.Group>
         <Form.Label>Reason for contacting us</Form.Label>
         <Form.Control
@@ -86,11 +90,6 @@ const ContactCreateForm = () => {
           {message}
         </Alert>
       ))}
-       {alertVisible && (
-        <Alert variant="success">
-          Your comment has been submitted successfully!
-        </Alert>
-      )}
 
       <Button className={btnStyles.Button} onClick={() => history.push('/')}>
         Cancel
@@ -106,6 +105,14 @@ const ContactCreateForm = () => {
       <Form onSubmit={handleSubmit}>
         <Container className={styles.Contacts}>{textFields}</Container>
       </Form>
+
+      <AlertMessage
+        showAlert={showAlert}
+        setShowAlert={setShowAlert}
+        variant="success"
+        alertMessage="Your message has been successfully sent to the admin team!"
+      />
+
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Confirmed</Modal.Title>
