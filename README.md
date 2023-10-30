@@ -7,6 +7,23 @@ The live link can be found here:[]
 
 ![Mockup](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698434886/screenshots_mseqky.jpg)
 
+# Reusable Components
+Reusable components are an essential part of developing efficient and maintainable React applications. By breaking down your UI into smaller, reusable pieces, you can reduce code duplication, improve consistency, and improve performance. <br>
+
+In my project, I used reusable components for the following reasons:
+* Reduced code duplication: By reusing components throughout my application, I was able to avoid writing the same code multiple times. This made my code more concise and easier to maintain.
+* Improved consistency: Reusable components helped me to ensure that the same pieces of UI were displayed in the same way throughout my application. This made my app more user-friendly and easier to navigate.
+* Improved performance: Reusable components can help to improve the performance of an app by caching the rendered output of components. This can reduce the amount of time it takes for an app to load and respond to user interactions.
+
+Overall, using reusable components in my React project helped me to develop a more efficient, maintainable, and user-friendly application.<br>
+
+Here are some specific examples of reusable components that I used in my project:
+* Button component: I used a reusable button component for all of the buttons in my app. This allowed me to easily customize the appearance and behavior of buttons throughout my app without having to write the code for each button individually.
+* Navigation bar component: I used a reusable navigation bar component for the navigation bar at the top of every page in my app. This allowed me to easily change the navigation options for different pages without having to rewrite the navigation bar code.
+* Form component: I used a reusable form component for all of the forms in my app. This allowed me to easily create and validate forms without having to write the code for each form individually.
+
+Using these reusable components helped me to save time and effort, and it also made my code more maintainable and scalable.
+
 # Backend API & Frontend Combined.
 
 ## The Strategy Plane
