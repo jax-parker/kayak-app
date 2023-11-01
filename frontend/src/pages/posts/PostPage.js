@@ -44,7 +44,7 @@ function PostPage() {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
-        <PopularProfiles />
+        {/* <PopularProfiles /> */}
         <Post {...post.results[0]} setPosts={setPost} postPage />
         <Container className={styles.Container}>
           {currentUser ? (
