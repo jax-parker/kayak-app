@@ -8,7 +8,7 @@ The live link can be found here:[]
 ![Mockup](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698434886/screenshots_mseqky.jpg)
 
 # Reusable Components
-Reusable components are an essential part of developing efficient and maintainable React applications. By breaking down your UI into smaller, reusable pieces, you can reduce code duplication, improve consistency, and improve performance. <br>
+Reusable components are an essential part of developing efficient and maintainable React applications. By breaking down my UI into smaller, reusable pieces, I reduced code duplication, improved consistency, and improved performance. <br>
 
 In my project, I used reusable components for the following reasons:
 * Reduced code duplication: By reusing components throughout my application, I was able to avoid writing the same code multiple times. This made my code more concise and easier to maintain.
@@ -18,9 +18,12 @@ In my project, I used reusable components for the following reasons:
 Overall, using reusable components in my React project helped me to develop a more efficient, maintainable, and user-friendly application.<br>
 
 Here are some specific examples of reusable components that I used in my project:
-* Button component: I used a reusable button component for all of the buttons in my app. This allowed me to easily customize the appearance and behavior of buttons throughout my app without having to write the code for each button individually.
-* Navigation bar component: I used a reusable navigation bar component for the navigation bar at the top of every page in my app. This allowed me to easily change the navigation options for different pages without having to rewrite the navigation bar code.
-* Form component: I used a reusable form component for all of the forms in my app. This allowed me to easily create and validate forms without having to write the code for each form individually.
+* Alert Message - to render alert messages
+* Navigation bar - creates the basic navigation bar functionality with aditional custom hooks
+* Avatar - for profile pictures
+* Asset - for the spinner
+* Not Found - for my 404 page
+* MoreDropdown - used to add edit and delete buttons to any element
 
 Using these reusable components helped me to save time and effort, and it also made my code more maintainable and scalable.
 
@@ -30,6 +33,7 @@ Using these reusable components helped me to save time and effort, and it also m
 ### Site Goals
 Kayak Klub is aimed at all kayak enthusiasts. The site aims to connect users with kayaks (or canoes) to allow them to share launch sites and any other valuable information that may be associated with the launch site such as parking, nearby facilites, ease of use etc.
 <hr>
+
 ## What3words
 What3words is a digital geocoding system that converts GPS coordinates into 3 word addresses. It lets you identify any location in the world that's three by three meters in size. The system is available for free and it also has Android and iOS apps. It differs from most other location encoding systems in that it displays three words rather than strings of numbers or letters. It is widely used by all emergency services. Please see the website for more details.
 
@@ -39,6 +43,8 @@ What3words is a digital geocoding system that converts GPS coordinates into 3 wo
 The Agile Methodology was used to plan this project. This was implemented through Github and the Project Board.
 Through the use of the Kanban board in the projects view in Github, the project was divided into a few different sections:
 Click here to take you to my board (opens in a new tab)
+
+![Kanban Board](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698777215/kanban-board_zcy3vc.png)
 
 [Kanban Board - Github](https://github.com/users/jax-parker/projects/10/views/1)
 
@@ -69,6 +75,7 @@ By Epic
 * As a developer, I need to create the base project set up so that I can build out the features.
 * As a developer, I need to create a Cloudinary account and create the connection to the project so that static images can be uploaded by users.
 * As a developer, I need to create an ElephantSQL acccount to handle my remote database.
+
 **Set Up - Frontend**
 * As a user, I would like a favicon on the website so that I can easily know which tab belongs to Kayak Klub
 * As a user, I would like a fully responsive navigation menu so that I can easily access the site from any device
@@ -77,6 +84,7 @@ By Epic
 **Add A Launchsite - Backend**
 * As a user, I want to be able to view edit or delete a launch site
 * As a user, I want to able to create a launch site and list launch sites
+
 **Add A Launchsite - Frontend**
 * As a logged in user I can create launchsites so that I can share my images and launch site information
 * As a user I can keep scrolling through the images on the site, that are loaded for me automatically so that I don't have to click on "next page"
@@ -98,6 +106,7 @@ By Epic
 **Profiles - Backend**
 * As a developer, I want to create a new blank profile with default image when a user is created.
 * As a user, I want to able to get a list of profiles
+
 **Profiles - Frontend**
 * As a user I can view all the launch sites by a specific user so that I can catch up on their latest sites, or decide I want to follow them
 * As a user I can view other users profiles so that I can see their launch sites and learn more about them
@@ -111,6 +120,7 @@ By Epic
 
 **Contact - Backend**
 * As a developer, I want to create a contact model and API view so that users can contact the site owner with issues
+
 **Contact - Frontend**
 * As a user, I would like to be able to contact the site owner (admin) in case I have any issues or queries
 <hr>
@@ -141,7 +151,7 @@ Implementation:
 
 
 ## The Structure Plane
-# Features
+## Features
 
 **Set Up**
 
@@ -240,6 +250,7 @@ Implementation:<br>
 A search bar has been added that will allow users to search for keywords so that they can search for content that interests them.
 
 ![Search Bar](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698501645/search-bar_xplfgw.png)
+
 `As a user I can view the details of a single post so that I can learn more about it`
 
 **Comments**
@@ -265,7 +276,7 @@ A delete button has been implemented to allow the user to edit or delete their c
 Implementation:<br>
 An edit button has been implemented to allow the user to edit or delete their comment.
 
-![Comments](![Alt text](image-1.png))
+![Comments](image-1.png)
 
 
 **Profiles**
@@ -297,28 +308,34 @@ A contact form was added to the navigation that will allow users to submit a con
 <details>
 Home, Add Launchsite, Liked & Feed
 
-![Home,View Launchsites,Liked & Feed](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698423492/wireframe_-_home.posts_mlbrb2.png)
-<br>
-Contact
-
-![Contact](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698423492/wireframe_-_contact_q7opbz.png)
-<br>
-Profiles
-
-![Profiles](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698423492/wireframe_-_profile_uxgakl.png)
-<br>
-Sign In
-
-![Sign In](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698423492/wireframe_-_signin_uhz2jf.png)
-<br>
 Sign Up
 
 ![Sign Up](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698424287/wireframe_-_signup_xc0h7e.png)
 <br>
+
+Sign In
+
+![Sign In](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698423492/wireframe_-_signin_uhz2jf.png)
+<br>
+
 Add Launchsite
 
 ![Add Launchsite](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698423492/wireframe_-_addpost_kjwlnq.png)
 
+View Launchsites & Most Popular Profiles
+
+![Home,View Launchsites,Liked & Feed](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698423492/wireframe_-_home.posts_mlbrb2.png)
+<br>
+
+Profiles
+
+![Profiles](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698423492/wireframe_-_profile_uxgakl.png)
+<br>
+
+Contact
+
+![Contact](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698423492/wireframe_-_contact_q7opbz.png)
+<br>
 </details>
 
 <summary>All Wireframe Images</summary>
