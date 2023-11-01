@@ -8,11 +8,9 @@ import Modal from "react-bootstrap/Modal";
 import { useHistory } from "react-router-dom";
 import btnStyles from "../../styles/Button.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
-// import useRedirect from "../../hooks/useRedirect";
 import AlertMessage from "../../components/AlertMessage";
 
 const ContactCreateForm = () => {
-  // useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   
   const [showAlert, setShowAlert] = useState(false);
@@ -22,9 +20,7 @@ const ContactCreateForm = () => {
     content: "",
   });
   const { reason, content } = contactData;
-
   const history = useHistory();
-
   const [show, setShow] = useState(false);
 
   const handleClose = () => {
@@ -46,17 +42,11 @@ const ContactCreateForm = () => {
 
     formData.append("reason", reason);
     formData.append("content", content);
-    
-
 
     try {
       await axiosReq.post("/contacts/", formData);
-      // history.goBack();
-   
       setShowAlert(true);
       handleShow();
-      
-      
     } catch (err) {
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
@@ -131,7 +121,7 @@ const ContactCreateForm = () => {
             Cancel
           </Button>
           <Button className={btnStyles.Button} onClick={handleClose}>
-            Back to Home Page
+            Return to Home Page
           </Button>
                     
         </Modal.Footer>
