@@ -109,7 +109,11 @@ function SalesCreateForm() {
           name="condition"
           value={condition}
           onChange={handleChange}
-        />
+        >
+        {/* <option value="new">New</option>
+        <option value="nearly_new">New</option>
+        <option value="used">Used</option> */}
+        </Form.Control>
       </Form.Group>
       {errors?.condition?.map((message, idx) =>(
         <Alert variant="warning" key={idx}>
@@ -119,7 +123,7 @@ function SalesCreateForm() {
       <Form.Group>
         <Form.Label>Price £</Form.Label>
         <Form.Control
-          as="textarea"
+          type="text"
           rows={1}
           name="price"
           value={price}
