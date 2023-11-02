@@ -68,6 +68,13 @@ const NavBar = () => {
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
+        to="/sales"
+      >
+        <i className="fa-solid fa-shop"></i>For Sale
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
         to="/contact/create"
       >
         <i className="fa-solid fa-file-signature"></i>Contact Us
