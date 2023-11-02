@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django_resized import ResizedImageField
 
 
 class Post(models.Model):
@@ -12,8 +13,8 @@ class Post(models.Model):
     location = models.CharField(max_length=255)
     what3words = models.CharField(max_length=255)
     comments = models.TextField(blank=True)
-    image = models.ImageField(
-        upload_to='images/', default='../default_post_mhjm11', blank=True
+    image = ResizedImageField(
+        upload_to='images/', force_format="WEBP", quality=75, default='../default_post_mhjm11', blank=True
     )
 
     class Meta:

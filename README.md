@@ -7,26 +7,6 @@ The live link can be found here:[]
 
 ![Mockup](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698434886/screenshots_mseqky.jpg)
 
-# Reusable Components
-Reusable components are an essential part of developing efficient and maintainable React applications. By breaking down my UI into smaller, reusable pieces, I reduced code duplication, improved consistency, and improved performance. <br>
-
-In my project, I used reusable components for the following reasons:
-* Reduced code duplication: By reusing components throughout my application, I was able to avoid writing the same code multiple times. This made my code more concise and easier to maintain.
-* Improved consistency: Reusable components helped me to ensure that the same pieces of UI were displayed in the same way throughout my application. This made my app more user-friendly and easier to navigate.
-* Improved performance: Reusable components can help to improve the performance of an app by caching the rendered output of components. This can reduce the amount of time it takes for an app to load and respond to user interactions.
-
-Overall, using reusable components in my React project helped me to develop a more efficient, maintainable, and user-friendly application.<br>
-
-Here are some specific examples of reusable components that I used in my project:
-* Alert Message - to render alert messages
-* Navigation bar - creates the basic navigation bar functionality with aditional custom hooks
-* Avatar - for profile pictures
-* Asset - for the spinner
-* Not Found - for my 404 page
-* MoreDropdown - used to add edit and delete buttons to any element
-
-Using these reusable components helped me to save time and effort, and it also made my code more maintainable and scalable.
-
 # Backend API & Frontend Combined.
 
 ## The Strategy Plane
@@ -35,19 +15,16 @@ Kayak Klub is aimed at all kayak enthusiasts. The site aims to connect users wit
 <hr>
 
 ## What3words
-What3words is a digital geocoding system that converts GPS coordinates into 3 word addresses. It lets you identify any location in the world that's three by three meters in size. The system is available for free and it also has Android and iOS apps. It differs from most other location encoding systems in that it displays three words rather than strings of numbers or letters. It is widely used by all emergency services. Please see the website for more details.
+What3words is a digital geocoding system that converts GPS coordinates into 3 word addresses. It lets you identify any location in the world that's three by three meters in size. The system is available for free and it also has Android and iOS apps. It differs from most other location encoding systems in that it displays three words rather than strings of numbers or letters. It is widely used by all emergency services. Please see the website for more details. I have used this within my project as launch sites are not always obvious and can sometimes be a low bank on a river or a specific part of a lake. This helps the users identify exactly where they can launch from.
 
-[What3words](https://what3words.com/) 
+[What3words Website](https://what3words.com/) 
 
 ### Agile Planning
 The Agile Methodology was used to plan this project. This was implemented through Github and the Project Board.
 Through the use of the Kanban board in the projects view in Github, the project was divided into a few different sections:
-Click here to take you to my board (opens in a new tab)
+Click [here](https://github.com/users/jax-parker/projects/10/views/1) to take you to my board (opens in a new tab)
 
 ![Kanban Board](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698777215/kanban-board_zcy3vc.png)
-
-[Kanban Board - Github](https://github.com/users/jax-parker/projects/10/views/1)
-
 ### Epics
 
 **Set Up**
@@ -68,6 +45,7 @@ This epic covers all API endpoint creation and database connections relating to 
 
 **Contact**
 This epic covers the front end creation of the application in regards to a contact page. This allows users to interact withthe backend API via the user interface and allow users to contact the site's admin.
+
 ## User Stories
 By Epic
 
@@ -303,6 +281,8 @@ Implementation:<br>
 A contact form was added to the navigation that will allow users to submit a contact request if they have any issues or queries.
 
 ![Contact Form](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698504056/contact-form_o17pzn.png)
+
+# Reusable Components
 ## The Skeleton Plane
 ### Wireframes
 <details>
