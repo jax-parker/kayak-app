@@ -55,7 +55,7 @@ const ContactCreateForm = () => {
   };
 
   const textFields = (
-    <div className={styles.Post}>
+    <div className={styles.Sales}>
       <Form.Group>
         <Form.Label>Reason for contacting us</Form.Label>
         <Form.Control

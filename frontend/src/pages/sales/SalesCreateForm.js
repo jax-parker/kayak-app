@@ -81,7 +81,7 @@ function SalesCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
-      {errors?.launchsite_name?.map((message, idx) =>(
+      {errors?.title?.map((message, idx) =>(
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
@@ -96,7 +96,7 @@ function SalesCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
-      {errors?.location?.map((message, idx) =>(
+      {errors?.description?.map((message, idx) =>(
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
@@ -111,7 +111,7 @@ function SalesCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
-      {errors?.what3words?.map((message, idx) =>(
+      {errors?.condition?.map((message, idx) =>(
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
@@ -126,7 +126,7 @@ function SalesCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
-      {errors?.comments?.map((message, idx) =>(
+      {errors?.price?.map((message, idx) =>(
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
@@ -142,7 +142,7 @@ function SalesCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
-      {errors?.comments?.map((message, idx) =>(
+      {errors?.location?.map((message, idx) =>(
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
@@ -156,7 +156,7 @@ function SalesCreateForm() {
         cancel
       </Button>
       <Button className={`${btnStyles.Button} ${btnStyles.Bright}`} type="submit">
-        create
+        add sale
       </Button>
     </div>
   );
