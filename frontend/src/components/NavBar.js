@@ -43,7 +43,7 @@ const NavBar = () => {
       activeClassName={styles.Active}
       to="/sales/create"
     >
-      <i className="fa-solid fa-shop"></i>Add launchsite
+      <i className="fa-solid fa-shop"></i>Add a sale
     </NavLink>
   );
   const loggedInIcons = (
