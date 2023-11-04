@@ -18,6 +18,7 @@ import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import NotFound from "./components/NotFound";
 import SalesCreateForm from "./pages/sales/SalesCreateForm";
 import SalePage from "./pages/sales/SalePage";
+import SalesPage from "./pages/sales/SalesPage";
 
 
 function App() {
@@ -44,6 +45,10 @@ function App() {
               filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
               />
                )}  
+              />
+              <Route exact path="/sales/" render={() => (
+              <SalesPage message="No results found. Adjust the search keyword." />
+              )}
               />
               <Route exact path="/signin" render={() => <SignInForm />} />
               <Route exact path="/signup" render={() => <SignUpForm />} />

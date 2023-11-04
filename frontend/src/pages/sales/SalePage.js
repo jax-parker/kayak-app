@@ -34,7 +34,6 @@ function SalePage() {
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>For Sale</p>
         <Sale {...sale.results[0]} setSales={setSale} salePage />
-        <Container className={appStyles.Content}>Comments</Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
         Popular profiles for desktop
