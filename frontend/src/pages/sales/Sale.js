@@ -2,9 +2,10 @@ import React from "react";
 import styles from "../../styles/Sale.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
-
+import { axiosRes } from "../../api/axiosDefaults";
+import { MoreDropdown } from "../../components/MoreDropdown";
 
     const Sale = (props) => {
     const {
@@ -24,6 +25,20 @@ import Avatar from "../../components/Avatar";
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
+    const history = useHistory();
+
+    const handleEdit = () => {
+      history.push(`/sales/${id}/edit`);
+    };
+
+    const handleDelete = async () => {
+      try {
+        await axiosRes.delete(`/sales/${id}/`);
+        history.goBack();
+      } catch (err) {
+        console.log(err);
+      }
+    };
 
     return (
     <Card className={styles.Sale}>
@@ -35,7 +50,12 @@ import Avatar from "../../components/Avatar";
           </Link>
           <div className="d-flex align-items-center">
             <span>{updated_at}</span>
-            {is_owner && salePage && "..."}
+            {is_owner && salePage && (
+              <MoreDropdown
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+              />
+            )}
           </div>
         </Media>
       </Card.Body>

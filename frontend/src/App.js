@@ -19,6 +19,7 @@ import NotFound from "./components/NotFound";
 import SalesCreateForm from "./pages/sales/SalesCreateForm";
 import SalePage from "./pages/sales/SalePage";
 import SalesPage from "./pages/sales/SalesPage";
+import SaleEditForm from "./pages/sales/SaleEditForm";
 
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
               <Route exact path="/contact/create" render={() => <ContactCreateForm />} />
               <Route exact path="/sales/create" render={() => <SalesCreateForm />} />
               <Route exact path="/sales/:id" render={() => <SalePage />} />
+              <Route exact path="/sales/:id/edit" render={() => <SaleEditForm />} />
               <Route exact path="/profiles/:id/edit/username" render={() => <UsernameForm />} />
               <Route exact path="/profiles/:id/edit/password" render={() => <UserPasswordForm />} />
               <Route exact path="/profiles/:id/edit" render={() => <ProfileEditForm />} />
