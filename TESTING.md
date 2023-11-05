@@ -1,4 +1,25 @@
 # Testing
+
+## Validator Results
+All folders were run through flake8. Issues were mostly blank spaces, indentation and extra lines. 
+
+All issues were resolved with the exception of lines too long in migration files as they are auto-generated so didn't fix and the import env in settings.py was left as this code was pre-written by Code Institute.
+
+[Kayak_api](https://res.cloudinary.com/dwvsz0fug/image/upload/v1699209677/flake_-_kayak_api_ij1wpo.png)
+
+[Profiles](https://res.cloudinary.com/dwvsz0fug/image/upload/v1699209678/flake8_-_profiles_zdldi8.png)
+
+[Posts](https://res.cloudinary.com/dwvsz0fug/image/upload/v1699209677/flake8_-_posts_vx8cy5.png)
+
+[Comments](https://res.cloudinary.com/dwvsz0fug/image/upload/v1699209677/flake8_-_comments_m8rp1x.png)
+
+[Likes](https://res.cloudinary.com/dwvsz0fug/image/upload/v1699209677/flake8_-_likes_es18uc.png)
+
+[Followers](https://res.cloudinary.com/dwvsz0fug/image/upload/v1699209677/flake8_-_followers_nwvkci.png)
+
+[Contacts](https://res.cloudinary.com/dwvsz0fug/image/upload/v1699209677/flake8_-_contacts_szojx2.png)
+
+[Sales](https://res.cloudinary.com/dwvsz0fug/image/upload/v1699209678/flake8_-_sales_fhoqse.png)
 ## Manual Testing
 
 In addition to the other tests, I have conducted a manual check list for myself to carry out to make sure that everything is working as intended.

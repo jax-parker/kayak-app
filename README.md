@@ -33,6 +33,9 @@ This fictional site was created for Portfolio Project #5 (Advanced Front End) - 
     * [Contact frontend](<#contact-frontend>)
 
 -[Database Design](<#database-design>)
+    * [Entity Relationship Diagram](<#entity-relationship-diagram>)
+    * [Security](<#security>)
+    * [Python Packages](<#python-packages>)
 
 - [The Structure Plane](<#the-structure-plane>)
     * [Set Up](<#set-up>)
@@ -184,6 +187,9 @@ By Epic
 <br>
 
 ## Database Design
+
+![Entity Relationship Diagram](https://res.cloudinary.com/dwvsz0fug/image/upload/v1699212084/ERD-kayak-club_iyhmkh.png)
+
 
 ## Security
 A permissions class was added called IsOwnerOrReadOnly to ensure only users who create the content are able to edit or delete it.
