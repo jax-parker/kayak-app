@@ -18,9 +18,9 @@ function SalePage() {
           axiosReq.get(`/sales/${id}`),
         ]);
         setSale({ results: [sale] });
-        console.log(sale);
+        // console.log(sale);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
 

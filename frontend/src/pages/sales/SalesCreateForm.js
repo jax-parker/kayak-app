@@ -215,13 +215,6 @@ function SalesCreateForm() {
           <Container className={styles.Content}>{textFields}</Container>
         </Col>
       </Row>
-      <Button className={btnStyles.Button} onClick={() => history.push('/')}>
-        Cancel
-      </Button>
-      <Button className={btnStyles.Button} type="submit">
-        Send
-      </Button>
-    
     </Form>
   );
 }
