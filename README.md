@@ -686,6 +686,7 @@ A copy of the GitHub Repository can be made by forking the GitHub account. Chang
 <br>
 
 ### Acknowledgements
-I'd like to thank Alan, Sean, Oisin and Sarah in Student Services for all their help, hints and advice.
-Thank you to my Slack buddy Ayla for keeping my spirits up when I struggled along the way.
-Thank you to my family for putting up with missing holiday breaks as I used them to get this course completed.
+I'd like to thank Alan, Sean, Oisin and Sarah in Student Services for all their help, hints and advice.<br>
+Thank you to my Slack buddy Ayla for keeping my spirits up when I struggled along the way.<br>
+Thank you to my family for putting up with missing holiday breaks as I used them to get this course completed.<br>
+Thank you to my mentor Daisy McGirr for her patience and teaching.

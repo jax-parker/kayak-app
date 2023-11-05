@@ -75,7 +75,7 @@ In addition to the other tests, I have conducted a manual check list for myself 
 
 | Status | **Add Launchsite**
 |:-------:|:--------|
-| &check; | clicking on Add launchsite takes you to the launchsite posts page
+| &check; | clicking on Add launchsite takes you to the launchsite posts form page
 | &check; | If inputs are empty, clicking on create shows 'field may not be blank'
 | &check; | clicking on Add launchsite takes you to the launchsite posts page
 | &check; | Clicking on the upload image or choose image button allows you to add a picture
@@ -124,6 +124,18 @@ In addition to the other tests, I have conducted a manual check list for myself 
 | &check; | Typing in a word contained within posts shows all posts with that word(s)
 | &check; | Typing in a word that does not appear in any post shows the no results found page
 
+| Status | **Add A Sale**
+|:-------:|:--------|
+| &check; | clicking on Add a sale takes you to the sale posts form page
+| &check; | If inputs are empty, clicking on create shows 'field may not be blank' or 'a valid number is required'
+| &check; | clicking on Add sale takes you to the sale posts page
+| &check; | Clicking on the upload image or choose image button allows you to add a picture
+| &check; | If adding a picture which is too big, warning message shows and change the image button appears
+| &check; | Clicking add sale after filling in inputs creates the sale post
+| &check; | Profile picture, name and date appear at top of sale post
+| &check; | Clicking on three dots icons allow you to edit or delete your sale post
+| &check; | Clicking on edit icon takes to the edit page so you can edit then save and return to see your post
+| &check; | Clicking on delete, deletes your sale and takes you to home page
 
 | Status | **Sign Out**
 |:-------:|:--------|
@@ -131,6 +143,10 @@ In addition to the other tests, I have conducted a manual check list for myself 
 
 
 ## Lighthouse Testing
+
+Lighthouse testing was performed and performance was poor due to the amount of images which could be improved in the future by compressing them before uploading. Unfortunately, I ran out of time and was unable to implement.
+
+![Lighthouse](https://res.cloudinary.com/dwvsz0fug/image/upload/v1699213845/lighthouse-test_hqdktp.png)
 ## Responsiveness
 | Status | **Responsive Testing - Bootstrap standards**
 |:-------:|:--------|
