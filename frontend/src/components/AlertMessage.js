@@ -12,7 +12,7 @@ const AlertMessage = (props) => {
                     () => showAlert(false)
                 } className = "" dismissable="true">
                     <p> {alertMessage}</p>
-
+                    
                 </Alert>
             </Container>
         )

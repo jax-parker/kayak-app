@@ -8,7 +8,7 @@ import Alert from "react-bootstrap/Alert";
 import Image from "react-bootstrap/Image";
 import Asset from "../../components/Asset";
 import Upload from "../../assets/upload.png";
-import styles from "../../styles/SalesCreateEditForm.module.css";
+import styles from "../../styles/SaleCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
@@ -215,6 +215,13 @@ function SalesCreateForm() {
           <Container className={styles.Content}>{textFields}</Container>
         </Col>
       </Row>
+      <Button className={btnStyles.Button} onClick={() => history.push('/')}>
+        Cancel
+      </Button>
+      <Button className={btnStyles.Button} type="submit">
+        Send
+      </Button>
+    
     </Form>
   );
 }

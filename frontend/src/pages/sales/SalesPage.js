@@ -62,6 +62,7 @@ function SalesPage({ message, filter = "" }) {
             className="mr-sm-2"
             placeholder="Search sales"
           />
+          
         </Form>
 
         {hasLoaded ? (
@@ -75,7 +76,9 @@ function SalesPage({ message, filter = "" }) {
                 loader={<Asset spinner />}
                 hasMore={!!sales.next}
                 next={() => fetchMoreData(sales, setSales)}
+                
               />
+              
             ) : (
               <Container className={appStyles.Content}>
                 <Asset src={NoResults} message={message} />
@@ -88,6 +91,7 @@ function SalesPage({ message, filter = "" }) {
           </Container>
         )}
       </Col>
+      
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
         <PopularProfiles />
       </Col>
