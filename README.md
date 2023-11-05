@@ -32,6 +32,8 @@ This fictional site was created for Portfolio Project #5 (Advanced Front End) - 
     * [Contact backend](<#contact-backend>)
     * [Contact frontend](<#contact-frontend>)
 
+-[Database Design](<#database-design>)
+
 - [The Structure Plane](<#the-structure-plane>)
     * [Set Up](<#set-up>)
     * [Navigation](<#navigation>)
@@ -178,6 +180,73 @@ By Epic
 
 **Contact - Frontend**
 * As a user, I would like to be able to contact the site owner (admin) in case I have any issues or queries
+<hr>
+<br>
+
+## Database Design
+
+## Security
+A permissions class was added called IsOwnerOrReadOnly to ensure only users who create the content are able to edit or delete it.
+
+## Python Packages
+<details open>
+<summary> Details of packages </summary>
+
+* dj-database-url==1.0.0
+    * Used to parse the DATABASE_URL connection settings
+* dj-rest-auth==2.2.5
+    * Used with auth system
+* Django==4.1.1
+    * Main framework used to start the project
+* django-allauth==0.50.0
+    * Used for authentication
+* django-cors-headers==3.13.0
+    * Used for Cross-Origin Resource Sharing (CORS) headers to responses
+* django-filter==22.1
+    * Used to filter API results in serializers
+* django-storages==1.13.1
+    * Used to help connect with the google cloud storage bucket
+* djangorestframework==3.13.1
+    * Framework used to build the API endpoints
+* djangorestframework-simplejwt==5.2.0
+    * Used with djange rest framework to create access tokens for authentication
+* gunicorn==20.1.0
+    * Used for deployment of WSGI applications
+* Pillow==9.2.0
+    * Imaging Libray - used for image uploading
+* psycopg2==2.9.3
+    * PostgreSQL database adapter to allow deployed application to perform crud on the postgresql db
+* PyJWT==2.5.0
+    * For creating the Python Json Web Tokens for authentication
+
+Installed as package dependcies:
+asgiref==3.7.2
+black==23.10.1
+click==8.1.7
+cloudinary==1.36.0
+dj-database-url==0.5.0
+dj-rest-auth==2.1.9
+Django==3.2.22
+django-allauth==0.44.0
+django-cloudinary-storage==0.3.0
+django-cors-headers==4.3.0
+django-filter==23.3
+django-resized==1.0.2
+djangorestframework==3.14.0
+djangorestframework-simplejwt==4.7.2
+gunicorn==21.2.0
+oauthlib==3.2.2
+pathspec==0.11.2
+Pillow==8.2.0
+psycopg2==2.9.9
+psycopg2-binary==2.9.9
+PyJWT==2.8.0
+python3-openid==3.2.0
+pytz==2023.3.post1
+requests-oauthlib==1.3.1
+sqlparse==0.4.4
+whitenoise==6.4.0
+</details>
 <hr>
 <br>
 
