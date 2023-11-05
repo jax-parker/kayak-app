@@ -1,17 +1,73 @@
 # Kayak Klub
-Kayak Klub is a social edia platform for anyone who loves kayaking and wants to share information about launchsites, their exact postion using the website 'What3words' and leaving any comment about the launchsite that may be of interest to the users.
-
+Kayak Klub is a social media platform for anyone who loves kayaking and wants to share information about launchsites, their exact postion (within 3 meters) using the website 'What3words' and leaving any comment about the launchsite that may be of interest to the users. There is also a page where users can add kayaks and equipment for sale.
+This fictional site was created for Portfolio Project #5 (Advanced Front End) - Diploma in Full Stack Software Development Diploma at the [Code Institute](https://www.codeinstitute.net).
 <br>
-The live link can be found here:[]
+## Table of Contents
+
+- [Backend API & Frontend Combined](<#backend-api-frontend-combined>)
+- [The Strategy Plane](<#the-strategy-plane>)
+    * [Site Goals](<#site-goals>)
+    * [What3words](<#what3words>)
+    * [Agile Planning](<#agileplanning>)
+  
+- [Epics](<#epics>)
+    * [Set Up](<#set-iup>)
+    * [Add A Launchsite](<#add-a-launchsite>)
+    * [Comments](<#comments>)
+    * [Add A Sale](<#add-a-sale>)
+    * [Profiles](<#profiles>)
+    * [Contact](<#contact>)
+    
+
+- [User Stories](<#user-stories>)
+    * [Set Up Backend](<#set-up-backend>)
+    * [Set Up Frontend](<#set-up-frontend>)
+    * [Add A Launchsite Backend](<#add-a-launchsite-backend>)
+    * [Add A Launchsite Frontend](<#add-a-launchsite-frontend>)
+    * [Comments Frontend](<#comments-frontend>)
+    * [Sales backend](<#sales-backend>)
+    * [Sales frontend](<#sales-frontend>)
+    * [Profiles backend](<#profiles-backend>)
+    * [Profiles frontend](<#profiles-frontend>)
+    * [Contact backend](<#contact-backend>)
+    * [Contact frontend](<#contact-frontend>)
+
+- [The Structure Plane](<#the-structure-plane>)
+    * [Set Up](<#set-up>)
+    * [Navigation](<#navigation>)
+    * [Home](<#home>)
+    * [Comment](<#launch-sites>)
+    * [Sales](<#sales>)
+    * [Profiles](<#launch-sites>)
+    * [Contact](<#launch-sites>)
+
+- [Reusable React Components](#reusable-react-components)
+
+- [The Skeleton Plane](<#the-skeleton-plane>)
+    * [Wireframes](<#wireframes>)
+
+- [The Surface Plane](<#the-surface-plane>)   
+    * [User Stories](<#user-stories>)
+    * [Site Structure](<#site-structure>)
+    * [Design Choices](<#design-choices>)
+
+
 <br>
 
 ![Mockup](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698434886/screenshots_mseqky.jpg)
 
-# Backend API & Frontend Combined.
+[View live website here](https://kayak-app-03626ad4f3b8.herokuapp.com/)
+
+# Backend API & Frontend Combined
+A joint project combining the Django Rest Framework workspace and the React Frontend was created. There were four main benefits to combining this:
+* CORS will no longer be an issue as requests and responses will come from a shared base URL, both in my development and production environments.
+* I was able to see the terminal logs for my API while interacting with the React side of my project in development, making debugging significantly easier.
+* I was able to work on the development versions of both the API and the React project simultaneously.
+* With the front and back end applications on the same domain, Cookies (containing the JSONWebToken) required for authentication were not blocked from being set on browsers that currently have cross-site tracking protection enabled by default. This change will allow authentication and authorisation to run in these browsers without errors.
 
 ## The Strategy Plane
 ### Site Goals
-Kayak Klub is aimed at all kayak enthusiasts. The site aims to connect users with kayaks (or canoes) to allow them to share launch sites and any other valuable information that may be associated with the launch site such as parking, nearby facilites, ease of use etc.
+Kayak Klub is aimed at all kayak enthusiasts. The site aims to connect users with kayaks (or canoes) to allow them to share launch sites and any other valuable information that may be associated with the launch site such as parking, nearby facilites, ease of use etc. It also allows users to post items for sale such as used kayaks and associated equipment.
 <hr>
 
 ## What3words
@@ -38,6 +94,10 @@ This epic covers all API endpoint creation and database connections relating to 
 **Comments**
 
 This epic covers all API endpoint creation and database connections relating to the CRUD functionality of user comments in relation to posts & the front end creation of the application in regards to comments on posts. This is to allow users to interact with the backend API in order add comments on posts.
+
+**Add A Sale**
+
+This epic covers all API endpoint creation and database connections relating to the CRUD functionality of user posts for the sales section. The front end creation of the application in regards to sales entries. This is to allow users to interact with the backend API via the user interface in order to create, read, update and delete their own sale entries.
 
 **Profiles**
 
@@ -81,6 +141,19 @@ By Epic
 * As an owner of a comment I can delete my comment so that I can control removal of my comment from the application
 * As an owner of a comment I can edit my comment so that I can fix or update my existing comment
 
+**Add A Sale - Backend**
+* As a user, I want to be able to view edit or delete sales
+* As a user, I want to able to create a sale and list sales
+
+**Add A Sale - Frontend**
+* As a logged in user I can create a sale so that I can share my images and sale information
+* As a user I can keep scrolling through the images on the site, that are loaded for me automatically so that I don't have to click on "next page"
+* As a sale owner I can edit my sale title and descriptions, price etc so that I can make corrections or update my post after it was created
+* As a user I can view all the most recent sales, ordered by most recently created first so that I am up to date with the newest content
+* As a user, I can search for sales with keywords, so that I can find the sales and user profiles I am most interested in
+* As a user I can view the details of a single sale so that I can learn more about it
+* As a user I can click the buy now button and get a message informing of my purchase.
+
 **Profiles - Backend**
 * As a developer, I want to create a new blank profile with default image when a user is created.
 * As a user, I want to able to get a list of profiles
@@ -104,7 +177,10 @@ By Epic
 <hr>
 <br>
 
-## API Endpoints
+## The Structure Plane
+## Features
+
+**Set Up**
 
 `As a developer, I need to create the base project set up so that I can build out the features.`
 
@@ -126,12 +202,6 @@ Django rest framework and dj_rest_auth were installed and added to the url patte
 
 `As a developer, I want to create api views for launch sites so that they are available to the front end`
 Implementation:
-
-
-## The Structure Plane
-## Features
-
-**Set Up**
 
 ` As a user, I would like a favicon on the website so that I can easily know which tab belongs to Kayak Klub`
 
@@ -230,6 +300,8 @@ A search bar has been added that will allow users to search for keywords so that
 ![Search Bar](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698501645/search-bar_xplfgw.png)
 
 `As a user I can view the details of a single post so that I can learn more about it`
+Implementation:<br>
+A logged on user can click on a post to view it individually and see what comments other users have left and leave their own comment.
 
 **Comments**
 
@@ -256,6 +328,44 @@ An edit button has been implemented to allow the user to edit or delete their co
 
 ![Comments](image-1.png)
 
+**Sales**
+`As a logged in user I can create a sale so that I can share my images and sale information`
+Implementation:<br>
+A 'Add a Sale' button has been implemented in the nav bar in order for logged in users to create a sale post when they want to share something for sale. This takes you to the sale site sales page where users can upload an image, name the sale, add a descripton, add a condition, add a price and add a location. A cancel button will take you back to the home page and the add sale button will post your launchsite to the top of the home page.
+
+![Add a Sale Button](https://res.cloudinary.com/dwvsz0fug/image/upload/v1699196046/add-sale-button_brwtlm.png)
+
+![Add A Sale Form](https://res.cloudinary.com/dwvsz0fug/image/upload/v1699196054/sale-form_h97n7r.png)
+
+`As a user I can keep scrolling through the images on the site, that are loaded for me automatically so that I don't have to click on "next page"`
+Implementation:<br>
+Infinite scrolling was implemented to load 10 posts at a time and when user reaches the end of the scroll, it will load 10 more and so on. This will allow for optimal load times to enhance viewing pleasure.
+
+`As a sale owner I can edit my sale title and descriptions, price etc so that I can make corrections or update my post after it was created`
+Implementation:<br>
+Only the user who created the post will be able to edit or delete that post. This will ensure that users have full control of their own posts and unauthorized users cannot tamper with them.
+
+![Edit & Delete Sales](https://res.cloudinary.com/dwvsz0fug/image/upload/v1699196285/edit-delete-sale_bhbqez.png)
+
+`As a user I can view all the most recent sales, ordered by most recently created first so that I am up to date with the newest content`
+Implementation:<br>
+Users can see sales in order of date - newest created first.
+
+`As a user, I can search for sales with keywords, so that I can find the sales and user profiles I am most interested in`
+Implementation:<br>
+A search bar has been added that will allow users to search for keywords so that they can search for content that interests them.
+
+`As a user I can view the details of a single sale so that I can learn more about it`
+Implementation:<br>
+A logged on user can click on a post to view it individually.
+
+![Sale Post](https://res.cloudinary.com/dwvsz0fug/image/upload/v1699196493/sale-post_r3nf9l.png)
+
+`As a user I can click the buy now button and get a message informing of my purchase.`
+Implementation:<br>
+A user can click on the buy now button and receive a message that the seller will contact them. In future improvements to the site - this would be improved by sending a message/email to the seller or a direct payment page. Direct payment is not implemented in this project.
+
+![Buy Now](https://res.cloudinary.com/dwvsz0fug/image/upload/v1699196719/buy-now_oqby2y.png)
 
 **Profiles**
 
@@ -282,7 +392,20 @@ A contact form was added to the navigation that will allow users to submit a con
 
 ![Contact Form](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698504056/contact-form_o17pzn.png)
 
-# Reusable Components
+## Reusable Components
+Reusable React components are self-contained, modular pieces of UI that can be used and reused across different parts of an application. They promote code reusability, maintainability, and consistency in design. Here are the ones I have used within my project:
+
+* Alert Message: This component is used to display messages to the user. It is used twice in my project in the contact and sale pages.
+
+* Asset: This component is used to display images and videos. It is used to show the spinner when waiting for a page to load.
+
+* Avatar: This component is used to display user profile pictures.
+
+* More Dropdown: This component is used to display a menu of additional options. It is replicated in this project by the three dots image.
+
+* Nav Bar: This component is used to display the main navigation menu and is shown on each page of this project to enable the user to move around the project easily.
+
+* NotFound: This component is used to display a message when a page is not found. A custom 401 graphic was used for this page.
 ## The Skeleton Plane
 ### Wireframes
 <details>
@@ -301,6 +424,10 @@ Sign In
 Add Launchsite
 
 ![Add Launchsite](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698423492/wireframe_-_addpost_kjwlnq.png)
+
+Add A Sale
+
+![Add A Sale](https://res.cloudinary.com/dwvsz0fug/image/upload/v1699197885/wireframe_-_addsale_rclq5s.png)
 
 View Launchsites & Most Popular Profiles
 
@@ -322,14 +449,16 @@ Contact
 
 ## The Surface Plane
 
-### Design
+## Design
 
 #### Colour-Scheme
 I used the colour palette supplied by Looka when I created my logo
+
 ![colour schema](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698425045/Colour_Palette_v1lgbp.png)
 
 #### Typography
 I have chosen a font that is clear to read - Roboto
+
 ![Roboto](https://res.cloudinary.com/dwvsz0fug/image/upload/v1698425341/Roboto-font_wj7bks.png)
 #### Imagery
 The images on this website are user uploaded except for the logo which was created at [Looka.com](https://looka.com/)
@@ -356,26 +485,39 @@ Testing can be found in the [TESTING.md file](https://github.com/jax-parker/kaya
 <br>
 
 ## Deployment
-## Heroku Deployment
+## Heroku Deployment - Combined project Set Up
+* Because the React part of the project contains static files, I needed to store all the static files for deployment, using WhiteNoise. WhiteNoise will also store the static files for the Django Admin panel.
+* The React front end will be served from the domain’s root URL, so I needed to ensure that this is the React part of the project and not the DRF interface I worked with when the projects were separate. So I added code to ensure that the home page will display the React application. Any 404 errors redirect the user back to the React application where the request will be handled by the react-router-dom. I also adjusted my URLs so that all URLs for the DRF API contain /api/ to ensure that the API’s routes do not clash with the React application’s routes.
+* Next I had to compile all the static files from both the django admin panel and the React files into the staticfiles folder for deployment. This had to be done each time any changes were made to the front end using the following code.
+    * mkdir staticfiles
+    * python3 manage.py collectstatic
+    * cd frontend
+    * npm run build && mv build ../staticfiles/.
+    Any time I wanted redeploy I would run:
+    * npm run build && rm -rf ../staticfiles/build && mv build ../staticfiles/.
+    * I then added a runtime.txt file and added python-3.9.16 to ensure Heroku uses the correct version of Python to deploy my project
+
 ## Deployment to Heroku
 The site was deployed to Heroku. The steps to deploy are as follows:
 
-* Navigate to heroku and create an account
-* Click the new button in the top right corner
-* Select create new app
-* Enter app name
-* Select region and click create app
-* Click the resources tab and search for Heroku Postgres
-* Select hobby dev and continue
-
-* Click the deploy tab
-* Scroll down to Connect to GitHub and sign in / authorize when prompted
-* In the search box, find the repositoy you want to deploy and click connect
-* Scroll down to Manual deploy and choose the main branch
-* Click deploy
-<hr>
-<br>
-The live link can be found here:
+* Navigate to the Heroku website
+* Create a Heroku account by entering your email address and a password (or login if you have one already).
+* Activate the account through the authentication email sent to your email account
+* Click the new button on the top right corner of the screen and select create a new app from the dropdown menu.
+* Enter a unique name for the application.
+* Select the appropriate region for the application.
+* Click create app
+* In the Heroku dashboard click on the Resources tab
+* Scroll down to Add-Ons, search for and select 'Heroku Postgres'
+* In the Settings tab, scroll down to 'Reveal Config Vars' and copy the text in the box beside DATABASE_URL.
+#### Set up Environment Variables
+* In you IDE create a new env.py file in the top level directory
+* Add env.py to the .gitignore file
+* In env.py import the os library
+* In env.py add os.environ["DATABASE_URL"] = "Paste in the text link copied above from Heroku DATABASE_URL"
+* In env.py add `os.environ["SECRET_KEY"] = "Make up your own random secret key"
+* In env.py add os.environ["CLOUDINARY] = "Paste in the API Environment Variable link from Cloudinary and remove the prefix"
+* In Heroku Settings tab Config Vars enter the same secret key created in env.py by entering 'SECRET_KEY' in the box for 'KEY' and your randomly created secret key in the 'value' box.
 
 
 ### 1. Creating the Django Project
