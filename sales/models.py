@@ -2,11 +2,11 @@ from django.db import models
 from django.contrib.auth.models import User
 from django_resized import ResizedImageField
 
-CONDITION = (
-    ("new", "New"),
-    ("nearly_new", "Nearly New"),
-    ("used", "Used"),
-)
+# CONDITION = (
+#     ("new", "New"),
+#     ("nearly_new", "Nearly New"),
+#     ("used", "Used"),
+# )
 
 
 class Sales(models.Model):
@@ -15,7 +15,7 @@ class Sales(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=100)
-    condition = models.CharField(max_length=50, choices=CONDITION, default="new")
+    condition = models.CharField(max_length=50)
     description = models.CharField(max_length=10000, null=False, blank=False)
     price = models.FloatField()
     location = models.CharField(max_length=255)
