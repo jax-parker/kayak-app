@@ -28,7 +28,7 @@ class Sales(models.Model):
         blank=False,
         null=False,
     )
-        
+
     class Meta:
         ordering = ['-created_at']
 

@@ -51,6 +51,10 @@ This fictional site was created for Portfolio Project #5 (Advanced Front End) - 
     * [Site Structure](<#site-structure>)
     * [Design Choices](<#design-choices>)
 
+- [Deployment](<#deployment>)   
+- [Credits](<#credits>)  
+- [Acknowledgement](<#Acknowledgement>)  
+
 
 <br>
 
@@ -497,29 +501,6 @@ Testing can be found in the [TESTING.md file](https://github.com/jax-parker/kaya
     * npm run build && rm -rf ../staticfiles/build && mv build ../staticfiles/.
     * I then added a runtime.txt file and added python-3.9.16 to ensure Heroku uses the correct version of Python to deploy my project
 
-## Deployment to Heroku
-The site was deployed to Heroku. The steps to deploy are as follows:
-
-* Navigate to the Heroku website
-* Create a Heroku account by entering your email address and a password (or login if you have one already).
-* Activate the account through the authentication email sent to your email account
-* Click the new button on the top right corner of the screen and select create a new app from the dropdown menu.
-* Enter a unique name for the application.
-* Select the appropriate region for the application.
-* Click create app
-* In the Heroku dashboard click on the Resources tab
-* Scroll down to Add-Ons, search for and select 'Heroku Postgres'
-* In the Settings tab, scroll down to 'Reveal Config Vars' and copy the text in the box beside DATABASE_URL.
-#### Set up Environment Variables
-* In you IDE create a new env.py file in the top level directory
-* Add env.py to the .gitignore file
-* In env.py import the os library
-* In env.py add os.environ["DATABASE_URL"] = "Paste in the text link copied above from Heroku DATABASE_URL"
-* In env.py add `os.environ["SECRET_KEY"] = "Make up your own random secret key"
-* In env.py add os.environ["CLOUDINARY] = "Paste in the API Environment Variable link from Cloudinary and remove the prefix"
-* In Heroku Settings tab Config Vars enter the same secret key created in env.py by entering 'SECRET_KEY' in the box for 'KEY' and your randomly created secret key in the 'value' box.
-
-
 ### 1. Creating the Django Project
 * If development if being done locally: Activate your virtual environment
 * To ensure the virtual environment is not tracked by version control, add .venv to the .gitignore file.
@@ -584,8 +565,6 @@ DATABASES = {
  'cloudinary'
  ```
 * Connect Cloudinary to the Django app in `settings.py`:
-```
-
 
 * Make an initial commit and push the code to the GitHub Repository.
     ```git add .```
@@ -625,15 +604,13 @@ A copy of the GitHub Repository can be made by forking the GitHub account. Chang
 
 
 # Credits
-
-
-
+* The logo was created at [Looka](Looka.com)
+* The No Results found image s taken from [VectorStock](VectorStock.com)
+* This helped me create the Alert modal [React Alerts](https://react-bootstrap.github.io/docs/components/alerts/)
 <hr>
 <br>
-The live link can be found here:[]()
 
-### Run Locally
-## Credits
-* credits here
-### Content
 ### Acknowledgements
+I'd like to thank Alan, Sean, Oisin and Sarah in Student Services for all their help, hints and advice.
+Thank you to my Slack buddy Ayla for keeping my spirits up when I struggled along the way.
+Thank you to my family for putting up with missing holiday breaks as I used them to get this course completed.
