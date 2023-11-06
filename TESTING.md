@@ -141,10 +141,15 @@ In addition to the other tests, I have conducted a manual check list for myself 
 |:-------:|:--------|
 | &check; | Clicking on sign out page signs the user out and takes you back to home page
 
+## ESLint
+After running my code through ESLint there were no errors found in my code. The only errors which occured were in the code followed from the walkthrough project provided by Code Institute so I have left these alone.
+
+![ESLint Errors](https://res.cloudinary.com/dwvsz0fug/image/upload/v1699279269/ESLint-errors_qmd8fr.png)
+
 
 ## Lighthouse Testing
 
-Lighthouse testing was performed and performance was poor due to the amount of images which could be improved in the future by compressing them before uploading. Unfortunately, I ran out of time and was unable to implement.
+Lighthouse testing was performed and performance was poor due to the amount of images which could be improved in the future by compressing them before uploading. Unfortunately, I ran out of time and was unable to implement. Accessability scored high.
 
 ![Lighthouse](https://res.cloudinary.com/dwvsz0fug/image/upload/v1699213845/lighthouse-test_hqdktp.png)
 ## Responsiveness
@@ -155,3 +160,8 @@ Lighthouse testing was performed and performance was poor due to the amount of i
 | &check; | 992px for laptops
 | &check; | 1200px for large devices
 ## Bugs and their fixes
+* Whilst testing my profiles to see if they were working correctly profile/1/ would not work -  this was rectified by correcting the url path to - <int:pk>/
+* Launch_site would not migrate - I had to delte the migrations files for the Post app then run python manage.py migrate posts zero, python manage.py migrate posts. This removed all migrations from the database for that app. I then added the post model to admin.py, tested to ensure everything worked.
+* During adding liking and unliking posts, the default profile picture would not render. I renamed the file in Cloudinary and pasted into the Signin Form - an extra ' had thrown the code. Removed and tested to ensure all worked.
+* Invalid Host Header - On openin the port for the frontend after combining the projects I saw this alert. I discovered that after clicking on the Code Institute 'Use This Template' link at the beginning of the walkthrough this one is actually for Code Anywhere not GitPod. This was resolved with the help of Student Services who cloned another repo using the correct template and created another workspace.
+

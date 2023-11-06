@@ -8,10 +8,10 @@ This fictional site was created for Portfolio Project #5 (Advanced Front End) - 
 - [The Strategy Plane](<#the-strategy-plane>)
     * [Site Goals](<#site-goals>)
     * [What3words](<#what3words>)
-    * [Agile Planning](<#agileplanning>)
+    * [Agile Planning](<#agile-planning>)
   
 - [Epics](<#epics>)
-    * [Set Up](<#set-iup>)
+    * [Set Up](<#set-up)
     * [Add A Launchsite](<#add-a-launchsite>)
     * [Comments](<#comments>)
     * [Add A Sale](<#add-a-sale>)
@@ -52,12 +52,28 @@ This fictional site was created for Portfolio Project #5 (Advanced Front End) - 
     * [Wireframes](<#wireframes>)
 
 - [The Surface Plane](<#the-surface-plane>)   
-    * [User Stories](<#user-stories>)
-    * [Site Structure](<#site-structure>)
-    * [Design Choices](<#design-choices>)
+    * [Design](<#design>)
+    * [Colour-Scheme](<#colour-scheme>)
+    * [Typography](<#typography>)
+    * [imagery](<#imagery>)
+    * [Technologies](<#technologies>)
 
-- [Deployment](<#deployment>)   
+- [Testing & Bugs](<#testing-&-bugs>)
+    * [Installation & Running ESLint](<#installation-and-running-eslint>)
+
+- [Deployment](<#deployment>) 
+    * [Heroku Deployment - Combined Project Set Up](<#heroku-deployment---combined-project-set-up>)
+    * [Creating the Django Project](<#1-creating-the-django-project>)
+    * [Set up Environment Variables](#3-set-up-environment-variables)
+    * [Setting up settings.py](<#4-setting-up-settingspy>)
+    * [Heroku Deployment](<#5-heroku-deployment>)
+
+- [Github](<#github>)
+    * [To fork the repository on Github](<#to-fork-the-repository-on-github>)
+    * [To clone the repositroy on Github](<#to-clone-the-repository-on-github>)
+
 - [Credits](<#credits>)  
+
 - [Acknowledgement](<#Acknowledgement>)  
 
 
@@ -557,14 +573,37 @@ The website has been implemented with the use of a variety of technologies.
 - [Looka](Looka.com) used to create the Bookends Logo
 - [Cloudinary](https://cloudinary.com) used to host Static files for the site
 - [Heroku](https://www.heroku.com) used for hosting the deployed back-end site.
-
 ## Testing & Bugs
 Testing can be found in the [TESTING.md file](https://github.com/jax-parker/kayak-app/blob/main/TESTING.md)
+### Installation and running ESLint
+1. In the terminal  - npm install eslint --save-dev
+2. Next run the following command - npx eslint --init
+3. You will be prompted to answer a series of questions in the terminal, select the following answer to each question (unless you know what you are doing):
+
+Q - How would you like to use ESLint?<br>
+A - To check syntax and find problems<br>
+Q - What type of modules does your project use?<br>
+A -JavaScript modules (import/export)<br>
+Q - Which framework does your project use?<br>
+A -React<br>
+Q - Does your project use TypeScript?<br>
+A -No<br>
+Q - Where does your code run?<br>
+A -Browser (Use space bar to set selection)<br>
+Q - What format do you want your config file to be in?<br>
+A -JSON<br>
+
+4. You will then be prompted to install eslint-plugin-react, select yes.<br>
+   If prompted to select a package manager, use npm<br>
+
+5. Within your project folder you should now have an eslint configuration file named .eslintrc.json, we will now edit this file to enable future tests to be written. From your project folder, open the .eslintrc.json file. In the env section add "jest": true
+
+6. Run the command in the terminal - npx eslint src
+
 <hr>
 <br>
-
 ## Deployment
-## Heroku Deployment - Combined project Set Up
+## Heroku Deployment - Combined Project Set Up
 * Because the React part of the project contains static files, I needed to store all the static files for deployment, using WhiteNoise. WhiteNoise will also store the static files for the Django Admin panel.
 * The React front end will be served from the domain’s root URL, so I needed to ensure that this is the React part of the project and not the DRF interface I worked with when the projects were separate. So I added code to ensure that the home page will display the React application. Any 404 errors redirect the user back to the React application where the request will be handled by the react-router-dom. I also adjusted my URLs so that all URLs for the DRF API contain /api/ to ensure that the API’s routes do not clash with the React application’s routes.
 * Next I had to compile all the static files from both the django admin panel and the React files into the staticfiles folder for deployment. This had to be done each time any changes were made to the front end using the following code.
@@ -589,7 +628,7 @@ Testing can be found in the [TESTING.md file](https://github.com/jax-parker/kaya
 * Migrate changes: `python manage.py migrate`
 * Test server works locally: `python manage.py runserver`
 
-### 2. Create your Heroku app
+### 2. Creating your Heroku app
 * Navigate to the Heroku website
 * Create a Heroku account by entering your email address and a password (or login if you have one already).
 * Activate the account through the authentication email sent to your email account
@@ -652,13 +691,7 @@ DATABASES = {
 * In the 'search' box enter the Github repository name for the project
 * Click search and then click connect to link the heroku app with the Github repository. The box will confirm that heroku is connected to the repository.
 
-### 6. Final Deployment
-In the IDE: 
-* When development is complete change the debug setting to: `DEBUG = False` in `env.py` 
-* In Heroku settings config vars change the DISABLE_COLLECTSTATIC value to 0
-* Because DEBUG must be switched to True for development and False for production it is recommended that only manual deployment is used in Heroku. 
-* To manually deploy click the button 'Deploy Branch'. The default 'main' option in the dropdown menu should be selected in both cases. When the app is deployed a message 'Your app was successfully deployed' will be shown. Click 'view' to see the deployed app in the browser.
-
+## Github
 ## To fork the repository on GitHub
 
 A copy of the GitHub Repository can be made by forking the GitHub account. Changes can be made on this copy without affecting the original repository.
@@ -676,8 +709,6 @@ A copy of the GitHub Repository can be made by forking the GitHub account. Chang
 5. Type git clone, and then paste the URL copied from GitHub.
 6. Press enter and the clone of your repository will be created.
 
-
-
 # Credits
 * The logo was created at [Looka](Looka.com)
 * The No Results found image s taken from [VectorStock](VectorStock.com)
@@ -689,4 +720,4 @@ A copy of the GitHub Repository can be made by forking the GitHub account. Chang
 I'd like to thank Alan, Sean, Oisin and Sarah in Student Services for all their help, hints and advice.<br>
 Thank you to my Slack buddy Ayla for keeping my spirits up when I struggled along the way.<br>
 Thank you to my family for putting up with missing holiday breaks as I used them to get this course completed.<br>
-Thank you to my mentor Daisy McGirr for her patience and teaching.
+Thank you to my mentor Daisy McGirr.
