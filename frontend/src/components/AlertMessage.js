@@ -3,7 +3,7 @@ import Alert from 'react-bootstrap/Alert';
 
 const AlertMessage = (props) => {
 
-    const{showAlert, variant, alertMessage} = props
+    const{showAlert, variant, alertMessage} = props;
 
     return (
         showAlert && (
